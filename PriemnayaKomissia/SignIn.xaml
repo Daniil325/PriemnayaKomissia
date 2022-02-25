@@ -1,0 +1,49 @@
+﻿<Window x:Class="PriemnayaKomissia.SignIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PriemnayaKomissia"
+        mc:Ignorable="d"
+         Title="Вход" Height="300" Width="250" ResizeMode="NoResize" Background="#e5855c" Loaded="WinLoad">
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15" Background="#0be021" BorderThickness="1" Padding="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" x:Key="ImageButtonStyle">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <ContentPresenter/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Label Content="Имя пользователя" HorizontalAlignment="Left" Margin="46,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="46,89,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Name="tbPassword" Height="22" Margin="29,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" x:FieldModifier="public"/>
+
+        <Button HorizontalAlignment="Left" Margin="46,174,0,0"
+                            VerticalAlignment="Top"
+                            Width="149" Height="34"
+                            BorderThickness="0"
+                            Style="{StaticResource RoundedButtonStyle}"
+                            Click="SignInUser">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Войти" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,4,0,0" Width="40"/>
+            </StackPanel>
+        </Button>
+        <ComboBox HorizontalAlignment="Left" Margin="29,51,0,0" VerticalAlignment="Top" Width="182" Name="cmFio"/>
+    </Grid>
+</Window>
